@@ -1,9 +1,11 @@
 import { combineReducers } from "redux";
 
 import user from "./user.reducer";
+import capture from "./capture.reducer";
 
 const rootReducer = combineReducers({
-    user
+    user,
+    capture
 });
 
 type RootReducerType = typeof rootReducer;
