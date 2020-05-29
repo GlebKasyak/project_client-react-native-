@@ -27,7 +27,6 @@ type MapDispatchToProps = {
 type Props = MapStateToProps & MapDispatchToProps;
 
 const App: FC<Props> = ({ isAuth, getAuthUserData }) => {
-
     const authCheck = useCallback(async () => {
         const authData = await AsyncStorage.getItem(StorageKeys.isAuth);
 

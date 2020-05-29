@@ -7,7 +7,7 @@ import RegisterScreen from "./RegisterScreen";
 
 import { Auth } from "../../hoc";
 import { UserAPI } from "../../apiServices/userAPI";
-import { NavigationProps } from "../../interfaces/common";
+import { NavigationStackProps } from "../../interfaces/common";
 import { NavigationConstants } from "../../shared/constants";
 import { Colors } from "../../shared/constants";
 import { errorMessage } from "../../shared";
@@ -73,7 +73,7 @@ const RegisterScreenContainer = ({ navigation }: NavigationStackScreenProps) => 
 const composedWithAuthentication = compose(
     connect(),
     Auth
-)(RegisterScreenContainer) as NavigationProps<any>;
+)(RegisterScreenContainer) as NavigationStackProps<{}>;
 
 composedWithAuthentication.navigationOptions = () => ({
     headerTintColor: Colors.blue,

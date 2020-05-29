@@ -1,6 +1,7 @@
 import React, { Dispatch, FC, SetStateAction } from "react";
 import { NavigationParams, NavigationScreenProp, NavigationState } from "react-navigation";
 import { NavigationStackOptions, NavigationStackScreenProps } from "react-navigation-stack";
+import { NavigationBottomTabOptions, NavigationTabScreenProps } from "react-navigation-tabs";
 
 export interface ResponseType {
     message?: string,
@@ -28,5 +29,6 @@ export interface IDbDocumentType {
     updatedAt?: string
 }
 
-export type NavigationProps<P> = FC<P & NavigationStackScreenProps> & { navigationOptions: NavigationStackOptions | ((props: NavigationStackScreenProps) => NavigationStackOptions) };
-export type NavigationScreenType = NavigationScreenProp<NavigationState, NavigationParams>
+export type NavigationStackProps<P> = FC<P & NavigationStackScreenProps> & { navigationOptions: NavigationStackOptions | ((props: NavigationStackScreenProps) => NavigationStackOptions) };
+export type NavigationTabProps<P> = FC<P & NavigationTabScreenProps> & { navigationOptions: NavigationBottomTabOptions | ((props: NavigationTabScreenProps) => NavigationBottomTabOptions) };
+export type NavigationScreenType = NavigationScreenProp<NavigationState, NavigationParams>;

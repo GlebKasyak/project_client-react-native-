@@ -12,7 +12,7 @@ import { UserSelectors } from "../../store/selectors"
 import { login, ThunkDispatchUsersType } from "../../store/actions/user.action";
 import { AppStateType } from "../../store/reducers";
 
-import { ResponseType, NavigationProps } from "../../interfaces/common";
+import { ResponseType, NavigationStackProps } from "../../interfaces/common";
 import { rememberMe, errorMessage } from "../../shared";
 import { IUser, LoginDataType } from "../../interfaces/user";
 import { Colors, NavigationConstants } from "../../shared/constants";
@@ -98,7 +98,7 @@ const composedWithAuthentication = compose(
         mapDispatchToProps
     ),
     Auth
-)(LoginScreenContainer) as NavigationProps<Props>;
+)(LoginScreenContainer) as NavigationStackProps<Props>;
 
 composedWithAuthentication.navigationOptions = ({ navigation }) => ({
     title: "Login",
