@@ -9,18 +9,19 @@ import { View, Text } from "react-native";
 import { Toolbar } from "../../components";
 
 import { AppStateType } from "../../store/reducers";
-import { captureActions } from "../../store/actions/capture.action";
+import { captureActions, uploadPhoto } from "../../store/actions/capture.action";
 import { CaptureType } from "../../interfaces/capture";
 import { NavigationStackProps } from "../../interfaces/common";
 import { DoNotAuth } from "../../hoc";
 
 type MapDispatchToProps = {
-    addCapture: (payload: CaptureType) => void
+    addCapture: (payload: CaptureType) => void,
+    uploadPhoto: (type: "avatar", photo: CaptureType) => void
 }
 
 type Props = NavigationStackScreenProps & MapDispatchToProps;
 
-const CameraScreen: FC<Props> = ({ addCapture, navigation }) => {
+const CameraScreen: FC<Props> = ({ addCapture, uploadPhoto, navigation }) => {
     const cameraRef = useRef<Camera | null>(null);
 
     const [focusedScreen, setFocusedScreen] = useState<boolean>(true);
@@ -61,6 +62,7 @@ const CameraScreen: FC<Props> = ({ addCapture, navigation }) => {
         const photoData = await cameraRef.current!.takePictureAsync();
         setCapturing(false);
         addCapture(photoData);
+        uploadPhoto("avatar", photoData)
     };
 
     const handleLongCapture = async () => {
@@ -106,7 +108,7 @@ const CameraScreen: FC<Props> = ({ addCapture, navigation }) => {
 export default compose(
     connect<{}, MapDispatchToProps, {}, AppStateType>(
         null,
-        { addCapture: captureActions.addCaptureAC }
+        { addCapture: captureActions.addCaptureAC, uploadPhoto }
     ),
     DoNotAuth
 )(CameraScreen) as NavigationStackProps<Props>;
