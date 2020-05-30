@@ -24,7 +24,9 @@ export const getAuthUserData = (): ThunkActionType<void> => async dispatch => {
     const response = await UserAPI.me();
     const { success, data } = response.data;
 
-    if(success) dispatch(userActions.loginAC(data!));
+    if(success) {
+        dispatch(userActions.loginAC(data!));
+    }
 };
 
 export const login = (newData: LoginDataType): ThunkActionType<ResponseType> => async dispatch => {
