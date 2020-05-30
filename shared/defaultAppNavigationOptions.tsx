@@ -1,11 +1,11 @@
 import React from "react";
-import { NavigationStackScreenProps } from "react-navigation-stack";
 
 import { LogoutBtn } from "../components";
 
+import { StackNavigationType } from "../interfaces/common";
 import { Colors } from "./constants";
 
-export default  ({ navigation }: any) => ({
+export default  (navigation: StackNavigationType) => ({
     headerRight: () => ( <LogoutBtn navigation={ navigation } /> ),
     headerTintColor: Colors.blue,
     headerStyle: {

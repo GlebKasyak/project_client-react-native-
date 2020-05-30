@@ -4,4 +4,5 @@ export enum UsersEndPoints {
     me = "/users",
     register = "/users",
     logout = "/users/logout",
+    uploadAvatar = "/users/upload-avatar"
 }
