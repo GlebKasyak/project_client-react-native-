@@ -44,16 +44,6 @@ const LoginScreen: FC<Props> = (
             iconName="lock-outline"
             secureTextEntry
         />
-        {/*<Input*/}
-        {/*    value={ password }*/}
-        {/*    onChangeText={ setPassword }*/}
-        {/*    secureTextEntry*/}
-        {/*    accessoryRight={ props => <Icon { ...props } name="lock-outline" /> }*/}
-        {/*    label={ () => <Text style={ styles.label } >Password</Text> }*/}
-        {/*    caption={ props => <Text {...props}>Should contain at least 5 symbols</Text> }*/}
-        {/*    placeholder="Enter password"*/}
-        {/*    size="large"*/}
-        {/*/>*/}
         <View style={ styles.rememberMe } >
             <CheckBox
                 status="primary"

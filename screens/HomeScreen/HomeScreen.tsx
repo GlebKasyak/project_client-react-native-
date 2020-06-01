@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { compose } from "redux";
 import { Text } from "react-native";
 
-import { NavigationProps } from "../../interfaces/common";
+import { NavigationStackProps } from "../../interfaces/common";
 import { DoNotAuth } from "../../hoc";
 
 const HomeScreen = () => {
@@ -17,6 +17,6 @@ const HomeScreen = () => {
 const composedWithAuthentication = compose(
     connect(),
     DoNotAuth
-)(HomeScreen) as NavigationProps<any>;
+)(HomeScreen) as NavigationStackProps<{}>;
 
 export default composedWithAuthentication;

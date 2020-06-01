@@ -4,7 +4,9 @@ enum NavigationConstants {
     Auth = "Auth",
     Login = "Login",
     Register = "Register",
-    Home = "Home"
+    Home = "Home",
+    Camera = "Camera",
+    Gallery = "Gallery"
 }
 
 export default NavigationConstants;
