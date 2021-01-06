@@ -18,7 +18,7 @@
     "@types/node": "^14.0.1",
     "@ui-kitten/components": "^5.0.0",
     "@ui-kitten/eva-icons": "^5.0.0",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "expo": "~37.0.3",
     "expo-camera": "~8.2.0",
     "expo-constants": "^9.0.0",
